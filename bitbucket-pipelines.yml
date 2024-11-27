@@ -1,0 +1,26 @@
+# This is an example Starter pipeline configuration
+# Use a skeleton to build, test and deploy using manual and parallel steps
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: dotsunited/git-ftp
+
+pipelines:
+  branches:  
+    staging-branch:      
+      - step:
+          name: 'Deployment to AU Dev'
+          deployment: 'AU Dev'
+          script:            
+            - git ftp push --user $FTP_USER_AU_DEV --passwd $FTP_PASS_AU_DEV $FTP_HOST_ROOT_AU_DEV
+    master:
+      - parallel: 
+        - step:
+            name: 'Deployment to AU Live'
+            deployment: 'AU Live'
+            script:            
+              - git ftp push --user $FTP_USER_AU_LIVE --passwd $FTP_PASS_AU_LIVE $FTP_HOST_ROOT_AU_LIVE
+        - step:
+            name: 'Deployment to NZ Live'
+            deployment: 'NZ Live'
+            script:            
+              - git ftp push --user $FTP_USER_NZ_LIVE --passwd $FTP_PASS_NZ_LIVE $FTP_HOST_ROOT_NZ_LIVE

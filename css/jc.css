@@ -1,0 +1,113 @@
+.fadeOutText{
+	opacity: 0.5;
+}
+.fadeIt{
+	opacity: 0.5;
+}
+.timestampTextColor{
+	color: #00D1E5;
+}
+
+.approvedHLstatus{
+	color:green; 
+	font-weight:bold;
+}
+.deniedHLstatus{
+	color:red; 
+	font-weight:bold;
+}
+.pendingHLstatus{
+	color:red; 
+	font-style: italic;
+}
+.colorItRed{
+	color:red;
+}
+.colorItRedBold{
+	color:red;
+	font-weight: bold;
+}
+.hideIt{
+	display: none;
+}
+.showItBlock{
+	display: block;
+}
+.showItInline{
+	display: inline;
+}
+.redBorder{
+	border: 1px solid red;
+}
+.jfloatleft{
+	float: left;
+}
+.jfloatright{
+	float: right;
+}
+.jredHighlightRow{
+	background-color: #fcbdb6 !important;
+}
+.jtimestamp{
+	color:#00D1E5; 
+	font-style: italic;
+}
+.green-btn {
+    background-color: #00ae4d !important;
+}
+.jActiveStatus {
+    color: green;
+    font-weight: bold;
+}
+.jInActiveStatus {
+    color: red;
+    font-weight: bold;
+}
+.jGreyFadedBtn,
+.jGreyFadedBtn:hover{
+	background-color: #dedede !important;
+}
+
+.j_tbl_heading{
+	font-weight:bold !important;
+	background-color: #b4151b;
+	color: #fff;
+	padding: 5px !important;
+}
+
+.pme_table_div{
+	float:right;
+	margin:11px;
+	margin-right:0px;
+	width: 100%;
+}
+.jtenant_table
+{
+	text-align: left !important;
+}
+.ul_pme_tenants_hl_legend{
+	padding: 0;
+	list-style-type: none;
+}
+.ul_pme_tenants_hl_legend li{
+	float: left;
+	display: block;
+	margin-right: 20px;
+}
+.PMe_tenant_exist_bg{
+	background-color:#ffffff;
+}
+.PMe_tenant_new_bg{
+	background-color:#dff2bf;
+}
+.crm_tenant_need_update_bg{
+	background-color:#ffffcc;
+}
+.tenant_not_in_PMe_bg{
+	background-color:#fde4e4;
+}
+
+/* bold */
+.j_bold{
+	font-weight: bold !important;
+}

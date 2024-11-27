@@ -1,0 +1,153 @@
+<?
+
+// set timezone via country
+if($_SESSION['country_default']==1){
+	date_default_timezone_set('Australia/Sydney');
+}else if($_SESSION['country_default']==2){
+	date_default_timezone_set('Pacific/Auckland');
+}else{
+	date_default_timezone_set('Australia/Sydney');
+}
+
+define('URL', "https://" . $_SERVER['HTTP_HOST'] . "/");
+
+# password salt
+define('SALT', "hd31Tl340l8425R");
+define('CURRENT_DOMAIN', "sats.com.au");
+define('CURRENT_COUNTRY', 1); // AU
+define('IS_PRODUCTION', 0); // DEV
+
+// current domain
+$domain = CURRENT_DOMAIN;
+
+# site specific config
+define("HOST", "localhost");
+define("DATABASE", "");
+define("USERNAME", "root");
+define("PASSWORD", "");
+
+//define("DEV_SITE", 1);
+
+
+//$qa_email = "pokemaniacs123@yahoo.com";
+//$qa_email = "vaultdweller123@gmail.com";
+//$qa_email = "danielk@{$domain}";
+//$qa_email = "vanessah@sats.com.au";
+//$qa_email = "itsmegherx@gmail.com";
+$qa_email = "bent@sats.com.au";
+//$qa_email = "qa@sats.com.au";
+
+$cc_email = 'ccdev@sats.com.au';
+$auth_email = $qa_email;
+$urgent_email = $qa_email;
+$accounts_email = $qa_email;
+$sales_email = $qa_email;
+$hr_email = $qa_email;
+$info_email = $qa_email;
+$mm_email = $qa_email;
+$keys_email = $qa_email;
+$reports_email = $qa_email;
+
+# Fix trailing slash
+if(substr($_SERVER['DOCUMENT_ROOT'], -1) !== '/') $_SERVER['DOCUMENT_ROOT'] .= "/";
+
+# Craigs Staff ID
+define("ADMIN_ID", 10);
+define("ADAM", 2);
+define("CRAIG", 10);
+define("JANINE", 17);
+define("ASHLEIGH", 42);
+define("DANIEL", 2025);
+define("TED", 58);
+
+# define current page name
+define("PAGE", basename($_SERVER['SCRIPT_NAME']));
+
+# list of pages to ignore security checks for
+$ignore_pages = array("index.php", "forgot.php", "main.php", "test_results.php");
+
+# list of view_jobs.php parameters allowed for OFFICE staff
+$office_job_disallowed = array("merged", "completed", "pending", "cancelled");
+
+# define upload directory
+define("UPLOAD_DIR", "property_files/");
+define("UPLOAD_PATH_BASE", $_SERVER['DOCUMENT_ROOT'] . UPLOAD_DIR);
+
+# define base email template
+define("EMAIL_TEMPLATE", $_SERVER['DOCUMENT_ROOT'] . "inc/templates/email.html");
+
+# PDF image location
+define("PDF_IMAGE_DIR", (preg_replace("/(crmdev|crm)\//", "", $_SERVER['DOCUMENT_ROOT'])) . (stristr(URL, $domain) && !stristr($_SERVER['DOCUMENT_ROOT'], "www")? "www/" : "") .  'documents/');
+
+# security measure
+define("SATS_INC", 1);
+
+
+
+# debug emails
+//$debug_email = 'adam@4mation.com.au';
+$debug_email = 'vaultdweller123@gmail';
+define("DEBUG_EMAIL", $debug_email);
+define("CC_EMAIL", $cc_email);
+
+# page limits
+define("PER_PAGE", 50);
+
+# is this database using UTF-8? mainly for compatibility across old / new hosting
+# if enabled some password related functions require utf8_encode/decode wrapper
+#
+define("COMPANY_FROM_EMAIL", "info@{$domain}");
+define("COMPANY_ABBREV_NAME", "SATS");
+define("COMPANY_FULL_NAME", "Smoke Alarm Testing Services");
+define("COMPANY_PHONE_NUMBER", "1300 41 66 67");
+define("COMPANY_TENANT_NUMBER", "1300 55 21 99");
+define("COMPANY_BANK_BSB", "032 513");
+define("COMPANY_BANK_ACC", "281406");
+
+// sms provider
+define("SMS_PROVIDER", "@app.wholesalesms.com.au");
+define("DOC_ROOT", $_SERVER['DOCUMENT_ROOT'].'/');
+
+define("AUTH_EMAIL", $auth_email);
+define("URGENT_EMAIL", $urgent_email);
+define("ACCOUNTS_EMAIL", $accounts_email);
+define("SALES_EMAIL", $sales_email);
+define("HR_EMAIL", $hr_email);
+define("INFO_EMAIL", $info_email);
+define("MM_EMAIL", $mm_email);
+define("KEYS_EMAIL", $keys_email);
+define("REPORTS_EMAIL", $reports_email);
+define("NEW_TENANTS", 1);
+define("NEW_PM", 1);
+
+// pusher API
+define("PUSHER_APP_ID", 717445);
+define("PUSHER_KEY", 'b40d8e7ff097144dac0c');
+define("PUSHER_SECRET", '52933bc92f4871f2074a');
+define("PUSHER_CLUSTER", 'ap1');
+
+// bitly API
+define("BITLY_API_ACCESS_TOKEN", '25f9164067aa1c6925b12b21dee7c15a84d8c803');
+
+// Google Developer API key
+define("GOOGLE_DEV_API", 'AIzaSyAUHcKVPXD_kJQyPCC-bvTNEPsxC8LAUmA');
+
+// Mapping URL
+define("PUBlIC_MAP_DOMAIN", 'http://smokealarmregistrar.com.au');
+
+// Blink API
+/*
+// AU
+define("BLINK_EMAIL", 'info@sats.com.au');
+define("BLINK_PASS", 'smoke123');
+define("BLINK_REFRESH_TOKEN", '3t23CdM3glcuZQ3oMsleTB3LzHK8-NhpsqT061Vm0IRAr');
+define("BLINK_DOMAIN_ID", '39327');
+*/
+
+// NZ
+define("BLINK_EMAIL", 'info@sats.co.nz');
+define("BLINK_PASS", 'smoke123');
+define("BLINK_REFRESH_TOKEN", '4eKxWVuUkKpwPfnzvo3HnaOqsQnmqH5mfCl_0oDr58Gqc');
+define("BLINK_DOMAIN_ID", '39331');
+
+?>
